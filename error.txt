@@ -1,0 +1,577 @@
+/home/miguel/clion-2017.2.1/bin/cmake/bin/cmake --build /home/miguel/CLionProjects/Simbolos_Cristoffel/cmake-build-debug --target Simbolos_Cristoffel -- -j 4
+Scanning dependencies of target Simbolos_Cristoffel
+[ 50%] Building CXX object CMakeFiles/Simbolos_Cristoffel.dir/main.cpp.o
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:83:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp:23:17: error: expected ‘;’ at end of member declaration
+     mutable T * restrict data;
+                 ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp:23:26: error: ‘data’ does not name a type
+     mutable T * restrict data;
+                          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp: In constructor ‘FTensor::Tensor0<T*>::Tensor0(T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp:25:20: error: class ‘FTensor::Tensor0<T*>’ does not have any field named ‘data’
+     Tensor0(T *d): data(d) {}
+                    ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp: In member function ‘const FTensor::Tensor0<T*>& FTensor::Tensor0<T*>::operator=(const FTensor::Tensor0<T*>&)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp:29:8: error: ‘data’ was not declared in this scope
+       *data=*(a.data);
+        ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp: In member function ‘const FTensor::Tensor0<T*>& FTensor::Tensor0<T*>::operator=(const U&)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp:36:8: error: ‘data’ was not declared in this scope
+       *data=d;
+        ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp: In member function ‘const FTensor::Tensor0<T*>& FTensor::Tensor0<T*>::operator+=(const U&)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp:42:8: error: ‘data’ was not declared in this scope
+       *data+=d;
+        ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp: In member function ‘const FTensor::Tensor0<T*>& FTensor::Tensor0<T*>::operator-=(const U&)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp:48:8: error: ‘data’ was not declared in this scope
+       *data-=d;
+        ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp: In member function ‘const FTensor::Tensor0<T*>& FTensor::Tensor0<T*>::operator*=(const U&)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp:54:8: error: ‘data’ was not declared in this scope
+       *data*=d;
+        ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp: In member function ‘const FTensor::Tensor0<T*>& FTensor::Tensor0<T*>::operator/=(const U&)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp:60:8: error: ‘data’ was not declared in this scope
+       *data/=d;
+        ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp: In member function ‘const T* FTensor::Tensor0<T*>::operator&() const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp:71:14: error: ‘data’ was not declared in this scope
+       return data;
+              ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp: In member function ‘FTensor::Tensor0<T*>::operator T() const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp:75:15: error: ‘data’ was not declared in this scope
+       return *data;
+               ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp: In member function ‘const FTensor::Tensor0<T*>& FTensor::Tensor0<T*>::operator++() const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor0.hpp:83:9: error: ‘data’ was not declared in this scope
+       ++data;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1.hpp:5:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:84,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp: At global scope:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp:14:17: error: expected ‘;’ at end of member declaration
+     mutable T * restrict data[Tensor_Dim];
+                 ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp:14:26: error: ‘data’ does not name a type
+     mutable T * restrict data[Tensor_Dim];
+                          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp: In constructor ‘FTensor::Tensor1<T*, Tensor_Dim>::Tensor1(T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp:22:49: error: wrong number of template arguments (1, should be 2)
+       Tensor1_constructor<T* restrict,Tensor_Dim>(data,d0,d1);
+                                                 ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1.hpp:3:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:84,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_constructor.hpp:9:9: note: provided for ‘template<class T, int Tensor_Dim> class FTensor::Tensor1_constructor’
+   class Tensor1_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1.hpp:5:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:84,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp:22:51: error: ‘data’ was not declared in this scope
+       Tensor1_constructor<T* restrict,Tensor_Dim>(data,d0,d1);
+                                                   ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp: In constructor ‘FTensor::Tensor1<T*, Tensor_Dim>::Tensor1(T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp:26:49: error: wrong number of template arguments (1, should be 2)
+       Tensor1_constructor<T* restrict,Tensor_Dim>(data,d0,d1,d2);
+                                                 ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1.hpp:3:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:84,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_constructor.hpp:9:9: note: provided for ‘template<class T, int Tensor_Dim> class FTensor::Tensor1_constructor’
+   class Tensor1_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1.hpp:5:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:84,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp:26:51: error: ‘data’ was not declared in this scope
+       Tensor1_constructor<T* restrict,Tensor_Dim>(data,d0,d1,d2);
+                                                   ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp: In constructor ‘FTensor::Tensor1<T*, Tensor_Dim>::Tensor1(T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp:30:49: error: wrong number of template arguments (1, should be 2)
+       Tensor1_constructor<T* restrict,Tensor_Dim>(data,d0,d1,d2,d3);
+                                                 ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1.hpp:3:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:84,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_constructor.hpp:9:9: note: provided for ‘template<class T, int Tensor_Dim> class FTensor::Tensor1_constructor’
+   class Tensor1_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1.hpp:5:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:84,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp:30:51: error: ‘data’ was not declared in this scope
+       Tensor1_constructor<T* restrict,Tensor_Dim>(data,d0,d1,d2,d3);
+                                                   ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp: In member function ‘T& FTensor::Tensor1<T*, Tensor_Dim>::operator()(int)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp:47:15: error: ‘data’ was not declared in this scope
+       return *data[N];
+               ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp: In member function ‘T FTensor::Tensor1<T*, Tensor_Dim>::operator()(int) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp:60:15: error: ‘data’ was not declared in this scope
+       return *data[N];
+               ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp: In member function ‘T* FTensor::Tensor1<T*, Tensor_Dim>::ptr(int) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp:73:14: error: ‘data’ was not declared in this scope
+       return data[N];
+              ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp: In member function ‘const FTensor::Tensor1<T*, Tensor_Dim>& FTensor::Tensor1<T*, Tensor_Dim>::operator++() const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor1/Tensor1_pointer.hpp:101:11: error: ‘data’ was not declared in this scope
+         ++data[i];
+           ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2.hpp:8:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:85,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp: At global scope:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:11:17: error: expected ‘;’ at end of member declaration
+     mutable T * restrict data[(layout==column_major) ? Tensor_Dim0 : Tensor_Dim1]
+                 ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:11:26: error: ‘data’ does not name a type
+     mutable T * restrict data[(layout==column_major) ? Tensor_Dim0 : Tensor_Dim1]
+                          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp: In constructor ‘FTensor::Tensor2<T*, Tensor_Dim0, Tensor_Dim1, layout>::Tensor2(T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:20:69: error: wrong number of template arguments (1, should be 4)
+       Tensor2_constructor<T* restrict,Tensor_Dim0,Tensor_Dim1,layout>
+                                                                     ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2.hpp:6:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:85,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_constructor.hpp:10:9: note: provided for ‘template<class T, int Tensor_Dim0, int Tensor_Dim1, FTensor::Layout layout> class FTensor::Tensor2_constructor’
+   class Tensor2_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2.hpp:8:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:85,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:21:10: error: ‘data’ was not declared in this scope
+         (data,d00,d01,d10,d11);
+          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp: In constructor ‘FTensor::Tensor2<T*, Tensor_Dim0, Tensor_Dim1, layout>::Tensor2(T*, T*, T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:25:69: error: wrong number of template arguments (1, should be 4)
+       Tensor2_constructor<T* restrict,Tensor_Dim0,Tensor_Dim1,layout>
+                                                                     ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2.hpp:6:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:85,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_constructor.hpp:10:9: note: provided for ‘template<class T, int Tensor_Dim0, int Tensor_Dim1, FTensor::Layout layout> class FTensor::Tensor2_constructor’
+   class Tensor2_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2.hpp:8:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:85,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:26:10: error: ‘data’ was not declared in this scope
+         (data,d00,d01,d10,d11,d20,d21);
+          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp: In constructor ‘FTensor::Tensor2<T*, Tensor_Dim0, Tensor_Dim1, layout>::Tensor2(T*, T*, T*, T*, T*, T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:30:69: error: wrong number of template arguments (1, should be 4)
+       Tensor2_constructor<T* restrict,Tensor_Dim0,Tensor_Dim1,layout>
+                                                                     ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2.hpp:6:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:85,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_constructor.hpp:10:9: note: provided for ‘template<class T, int Tensor_Dim0, int Tensor_Dim1, FTensor::Layout layout> class FTensor::Tensor2_constructor’
+   class Tensor2_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2.hpp:8:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:85,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:31:10: error: ‘data’ was not declared in this scope
+         (data,d00,d01,d02,d10,d11,d12,d20,d21,d22);
+          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp: In constructor ‘FTensor::Tensor2<T*, Tensor_Dim0, Tensor_Dim1, layout>::Tensor2(T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:36:69: error: wrong number of template arguments (1, should be 4)
+       Tensor2_constructor<T* restrict,Tensor_Dim0,Tensor_Dim1,layout>
+                                                                     ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2.hpp:6:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:85,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_constructor.hpp:10:9: note: provided for ‘template<class T, int Tensor_Dim0, int Tensor_Dim1, FTensor::Layout layout> class FTensor::Tensor2_constructor’
+   class Tensor2_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2.hpp:8:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:85,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:37:10: error: ‘data’ was not declared in this scope
+         (data,d00,d01,d02,d03,d10,d11,d12,d13,d20,d21,d22,d23,d30,d31,d32,d33);
+          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp: In member function ‘T& FTensor::Tensor2<T*, Tensor_Dim0, Tensor_Dim1, layout>::operator()(int, int)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:57:41: error: ‘data’ was not declared in this scope
+       return ((layout==column_major) ? *data[N1][N2] : *data[N2][N1]);
+                                         ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp: In member function ‘T FTensor::Tensor2<T*, Tensor_Dim0, Tensor_Dim1, layout>::operator()(int, int) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:73:41: error: ‘data’ was not declared in this scope
+       return ((layout==column_major) ? *data[N1][N2] : *data[N2][N1]);
+                                         ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp: In member function ‘T* FTensor::Tensor2<T*, Tensor_Dim0, Tensor_Dim1, layout>::ptr(int, int) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:88:40: error: ‘data’ was not declared in this scope
+       return ((layout==column_major) ? data[N1][N2] : data[N2][N1]);
+                                        ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp: In member function ‘const FTensor::Tensor2<T*, Tensor_Dim0, Tensor_Dim1, layout>& FTensor::Tensor2<T*, Tensor_Dim0, Tensor_Dim1, layout>::operator++() const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:166:39: error: ‘data’ was not declared in this scope
+           ((layout==column_major) ? ++data[i][j] : ++data[j][i]);
+                                       ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp: In member function ‘T FTensor::Tensor2<T*, Tensor_Dim0, Tensor_Dim1, layout>::internal_contract(FTensor::Number<Current_Dim>) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:190:15: error: ‘data’ was not declared in this scope
+       return *data[N-1][N-1] + internal_contract(Number<N-1>());
+               ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp: In member function ‘T FTensor::Tensor2<T*, Tensor_Dim0, Tensor_Dim1, layout>::internal_contract(FTensor::Number<1>) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2/Tensor2_pointer.hpp:195:15: error: ‘data’ was not declared in this scope
+       return *data[0][0];
+               ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric.hpp:7:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:86,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp: At global scope:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp:10:16: error: expected ‘;’ at end of member declaration
+     mutable T* restrict data[(Tensor_Dim*(Tensor_Dim+1))/2];
+                ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp:10:25: error: ‘data’ does not name a type
+     mutable T* restrict data[(Tensor_Dim*(Tensor_Dim+1))/2];
+                         ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp: In constructor ‘FTensor::Tensor2_symmetric<T*, Tensor_Dim>::Tensor2_symmetric(T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp:17:59: error: wrong number of template arguments (1, should be 2)
+       Tensor2_symmetric_constructor<T* restrict,Tensor_Dim>(data,d00,d01,d11);
+                                                           ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric.hpp:5:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:86,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_constructor.hpp:9:9: note: provided for ‘template<class T, int Tensor_Dim> class FTensor::Tensor2_symmetric_constructor’
+   class Tensor2_symmetric_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric.hpp:7:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:86,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp:17:61: error: ‘data’ was not declared in this scope
+       Tensor2_symmetric_constructor<T* restrict,Tensor_Dim>(data,d00,d01,d11);
+                                                             ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp: In constructor ‘FTensor::Tensor2_symmetric<T*, Tensor_Dim>::Tensor2_symmetric(T*, T*, T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp:23:59: error: wrong number of template arguments (1, should be 2)
+       Tensor2_symmetric_constructor<T* restrict,Tensor_Dim>(data,d00,d01,d02,d11,d12,d22);
+                                                           ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric.hpp:5:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:86,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_constructor.hpp:9:9: note: provided for ‘template<class T, int Tensor_Dim> class FTensor::Tensor2_symmetric_constructor’
+   class Tensor2_symmetric_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric.hpp:7:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:86,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp:23:61: error: ‘data’ was not declared in this scope
+       Tensor2_symmetric_constructor<T* restrict,Tensor_Dim>(data,d00,d01,d02,d11,d12,d22);
+                                                             ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp: In constructor ‘FTensor::Tensor2_symmetric<T*, Tensor_Dim>::Tensor2_symmetric(T*, T*, T*, T*, T*, T*, T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp:30:59: error: wrong number of template arguments (1, should be 2)
+       Tensor2_symmetric_constructor<T* restrict,Tensor_Dim>
+                                                           ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric.hpp:5:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:86,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_constructor.hpp:9:9: note: provided for ‘template<class T, int Tensor_Dim> class FTensor::Tensor2_symmetric_constructor’
+   class Tensor2_symmetric_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric.hpp:7:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:86,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp:31:10: error: ‘data’ was not declared in this scope
+         (data,d00,d01,d02,d03,d11,d12,d13,d22,d23,d33);
+          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp: In member function ‘T& FTensor::Tensor2_symmetric<T*, Tensor_Dim>::operator()(int, int)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp:50:23: error: ‘data’ was not declared in this scope
+       return N1>N2 ? *data[N1+(N2*(2*Tensor_Dim-N2-1))/2]
+                       ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp: In member function ‘T FTensor::Tensor2_symmetric<T*, Tensor_Dim>::operator()(int, int) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp:67:23: error: ‘data’ was not declared in this scope
+       return N1>N2 ? *data[N1+(N2*(2*Tensor_Dim-N2-1))/2]
+                       ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp: In member function ‘T* FTensor::Tensor2_symmetric<T*, Tensor_Dim>::ptr(int, int) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp:83:22: error: ‘data’ was not declared in this scope
+       return N1>N2 ? data[N1+(N2*(2*Tensor_Dim-N2-1))/2]
+                      ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp: In member function ‘const FTensor::Tensor2_symmetric<T*, Tensor_Dim>& FTensor::Tensor2_symmetric<T*, Tensor_Dim>::operator++() const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp:205:11: error: ‘data’ was not declared in this scope
+         ++data[i];
+           ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp: In member function ‘T FTensor::Tensor2_symmetric<T*, Tensor_Dim>::internal_contract(FTensor::Number<Current_Dim>) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp:229:15: error: ‘data’ was not declared in this scope
+       return *data[N-1+((N-1)*(2*Tensor_Dim-N))/2]
+               ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp: In member function ‘T FTensor::Tensor2_symmetric<T*, Tensor_Dim>::internal_contract(FTensor::Number<1>) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor2_symmetric/Tensor2_symmetric_pointer.hpp:235:15: error: ‘data’ was not declared in this scope
+       return *data[0];
+               ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg.hpp:9:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:90,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp: At global scope:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp:10:17: error: expected ‘;’ at end of member declaration
+     mutable T * restrict data[(Tensor_Dim01*(Tensor_Dim01+1))/2][Tensor_Dim2];
+                 ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp:10:26: error: ‘data’ does not name a type
+     mutable T * restrict data[(Tensor_Dim01*(Tensor_Dim01+1))/2][Tensor_Dim2];
+                          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp: In constructor ‘FTensor::Tensor3_dg<T*, Tensor_Dim01, Tensor_Dim2>::Tensor3_dg(T*, T*, T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp:17:66: error: wrong number of template arguments (1, should be 3)
+       Tensor3_dg_constructor<T* restrict,Tensor_Dim01,Tensor_Dim2>
+                                                                  ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg.hpp:7:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:90,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_constructor.hpp:9:9: note: provided for ‘template<class T, int Tensor_Dim01, int Tensor_Dim2> class FTensor::Tensor3_dg_constructor’
+   class Tensor3_dg_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg.hpp:9:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:90,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp:18:10: error: ‘data’ was not declared in this scope
+         (data,d000,d001,d010,d011,d110,d111);
+          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp: In constructor ‘FTensor::Tensor3_dg<T*, Tensor_Dim01, Tensor_Dim2>::Tensor3_dg(T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp:28:66: error: wrong number of template arguments (1, should be 3)
+       Tensor3_dg_constructor<T* restrict,Tensor_Dim01,Tensor_Dim2>
+                                                                  ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg.hpp:7:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:90,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_constructor.hpp:9:9: note: provided for ‘template<class T, int Tensor_Dim01, int Tensor_Dim2> class FTensor::Tensor3_dg_constructor’
+   class Tensor3_dg_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg.hpp:9:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:90,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp:29:10: error: ‘data’ was not declared in this scope
+         (data,d000,d001,d002,d010,d011,d012,d020,d021,
+          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp: In constructor ‘FTensor::Tensor3_dg<T*, Tensor_Dim01, Tensor_Dim2>::Tensor3_dg(T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp:45:66: error: wrong number of template arguments (1, should be 3)
+       Tensor3_dg_constructor<T* restrict,Tensor_Dim01,Tensor_Dim2>
+                                                                  ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg.hpp:7:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:90,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_constructor.hpp:9:9: note: provided for ‘template<class T, int Tensor_Dim01, int Tensor_Dim2> class FTensor::Tensor3_dg_constructor’
+   class Tensor3_dg_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg.hpp:9:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:90,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp:46:10: error: ‘data’ was not declared in this scope
+         (data,d000,d001,d002,d003,d010,d011,d012,d013,
+          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp: In constructor ‘FTensor::Tensor3_dg<T*, Tensor_Dim01, Tensor_Dim2>::Tensor3_dg(T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp:60:66: error: wrong number of template arguments (1, should be 3)
+       Tensor3_dg_constructor<T* restrict,Tensor_Dim01,Tensor_Dim2>
+                                                                  ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg.hpp:7:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:90,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_constructor.hpp:9:9: note: provided for ‘template<class T, int Tensor_Dim01, int Tensor_Dim2> class FTensor::Tensor3_dg_constructor’
+   class Tensor3_dg_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg.hpp:9:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:90,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp:61:10: error: ‘data’ was not declared in this scope
+         (data,d000,d001,d002,d010,d011,d012,
+          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp: In member function ‘T& FTensor::Tensor3_dg<T*, Tensor_Dim01, Tensor_Dim2>::operator()(int, int, int)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp:85:23: error: ‘data’ was not declared in this scope
+       return N1>N2 ? *data[N1+(N2*(2*Tensor_Dim01-N2-1))/2][N3]
+                       ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp: In member function ‘T FTensor::Tensor3_dg<T*, Tensor_Dim01, Tensor_Dim2>::operator()(int, int, int) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp:104:23: error: ‘data’ was not declared in this scope
+       return N1>N2 ? *data[N1+(N2*(2*Tensor_Dim01-N2-1))/2][N3]
+                       ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp: In member function ‘T* FTensor::Tensor3_dg<T*, Tensor_Dim01, Tensor_Dim2>::ptr(int, int, int) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp:121:22: error: ‘data’ was not declared in this scope
+       return N1>N2 ? data[N1+(N2*(2*Tensor_Dim01-N2-1))/2][N3]
+                      ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp: In member function ‘const FTensor::Tensor3_dg<T*, Tensor_Dim01, Tensor_Dim2>& FTensor::Tensor3_dg<T*, Tensor_Dim01, Tensor_Dim2>::operator++() const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_dg/Tensor3_dg_pointer.hpp:459:13: error: ‘data’ was not declared in this scope
+           ++data[i][j];
+             ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof.hpp:9:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:91,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp: At global scope:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp:10:17: error: expected ‘;’ at end of member declaration
+     mutable T * restrict  data[Tensor_Dim0][(Tensor_Dim12*(Tensor_Dim12+1))/2];
+                 ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp:10:27: error: ‘data’ does not name a type
+     mutable T * restrict  data[Tensor_Dim0][(Tensor_Dim12*(Tensor_Dim12+1))/2];
+                           ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp: In constructor ‘FTensor::Tensor3_christof<T*, Tensor_Dim0, Tensor_Dim12>::Tensor3_christof(T*, T*, T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp:17:72: error: wrong number of template arguments (1, should be 3)
+       Tensor3_christof_constructor<T* restrict,Tensor_Dim0,Tensor_Dim12>
+                                                                        ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof.hpp:7:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:91,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_constructor.hpp:9:9: note: provided for ‘template<class T, int Tensor_Dim0, int Tensor_Dim12> class FTensor::Tensor3_christof_constructor’
+   class Tensor3_christof_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof.hpp:9:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:91,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp:18:10: error: ‘data’ was not declared in this scope
+         (data,d000,d100,d001,d101,d011,d111);
+          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp: In constructor ‘FTensor::Tensor3_christof<T*, Tensor_Dim0, Tensor_Dim12>::Tensor3_christof(T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp:26:72: error: wrong number of template arguments (1, should be 3)
+       Tensor3_christof_constructor<T* restrict,Tensor_Dim0,Tensor_Dim12>
+                                                                        ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof.hpp:7:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:91,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_constructor.hpp:9:9: note: provided for ‘template<class T, int Tensor_Dim0, int Tensor_Dim12> class FTensor::Tensor3_christof_constructor’
+   class Tensor3_christof_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof.hpp:9:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:91,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp:27:10: error: ‘data’ was not declared in this scope
+         (data,d000,d100,d200,d001,d101,d201,d002,d102,d202,d011,d111,d211,
+          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp: In constructor ‘FTensor::Tensor3_christof<T*, Tensor_Dim0, Tensor_Dim12>::Tensor3_christof(T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp:43:72: error: wrong number of template arguments (1, should be 3)
+       Tensor3_christof_constructor<T* restrict,Tensor_Dim0,Tensor_Dim12>
+                                                                        ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof.hpp:7:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:91,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_constructor.hpp:9:9: note: provided for ‘template<class T, int Tensor_Dim0, int Tensor_Dim12> class FTensor::Tensor3_christof_constructor’
+   class Tensor3_christof_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof.hpp:9:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:91,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp:44:10: error: ‘data’ was not declared in this scope
+         (data,d000,d100,d200,d300,d001,d101,d201,d301,
+          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp: In member function ‘T& FTensor::Tensor3_christof<T*, Tensor_Dim0, Tensor_Dim12>::operator()(int, int, int)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp:68:23: error: ‘data’ was not declared in this scope
+       return N2>N3 ? *data[N1][N2+(N3*(2*Tensor_Dim12-N3-1))/2]
+                       ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp: In member function ‘T FTensor::Tensor3_christof<T*, Tensor_Dim0, Tensor_Dim12>::operator()(int, int, int) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp:87:23: error: ‘data’ was not declared in this scope
+       return N2>N3 ? *data[N1][N2+(N3*(2*Tensor_Dim12-N3-1))/2]
+                       ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp: In member function ‘T* FTensor::Tensor3_christof<T*, Tensor_Dim0, Tensor_Dim12>::ptr(int, int, int) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp:104:22: error: ‘data’ was not declared in this scope
+       return N2>N3 ? data[N1][N2+(N3*(2*Tensor_Dim12-N3-1))/2]
+                      ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp: In member function ‘const FTensor::Tensor3_christof<T*, Tensor_Dim0, Tensor_Dim12>& FTensor::Tensor3_christof<T*, Tensor_Dim0, Tensor_Dim12>::operator++() const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_christof/Tensor3_christof_pointer.hpp:258:13: error: ‘data’ was not declared in this scope
+           ++data[i][j];
+             ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric.hpp:9:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:92,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp: At global scope:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp:10:17: error: expected ‘;’ at end of member declaration
+     mutable T * restrict data[Tensor_Dim0][(Tensor_Dim12*(Tensor_Dim12-1))/2];
+                 ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp:10:26: error: ‘data’ does not name a type
+     mutable T * restrict data[Tensor_Dim0][(Tensor_Dim12*(Tensor_Dim12-1))/2];
+                          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp: In constructor ‘FTensor::Tensor3_antisymmetric<T*, Tensor_Dim0, Tensor_Dim12>::Tensor3_antisymmetric(T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp:17:56: error: wrong number of template arguments (1, should be 3)
+       Tensor3_antisymmetric_constructor<T* restrict,2,2>(data,d001,d101);
+                                                        ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric.hpp:7:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:92,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_constructor.hpp:10:9: note: provided for ‘template<class T, int Tensor_Dim0, int Tensor_Dim12> class FTensor::Tensor3_antisymmetric_constructor’
+   class Tensor3_antisymmetric_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric.hpp:9:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:92,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp:17:58: error: ‘data’ was not declared in this scope
+       Tensor3_antisymmetric_constructor<T* restrict,2,2>(data,d001,d101);
+                                                          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp: In constructor ‘FTensor::Tensor3_antisymmetric<T*, Tensor_Dim0, Tensor_Dim12>::Tensor3_antisymmetric(T*, T*, T*, T*, T*, T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp:24:56: error: wrong number of template arguments (1, should be 3)
+       Tensor3_antisymmetric_constructor<T* restrict,3,3>
+                                                        ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric.hpp:7:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:92,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_constructor.hpp:10:9: note: provided for ‘template<class T, int Tensor_Dim0, int Tensor_Dim12> class FTensor::Tensor3_antisymmetric_constructor’
+   class Tensor3_antisymmetric_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric.hpp:9:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:92,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp:25:10: error: ‘data’ was not declared in this scope
+         (data,d001,d002,d012,d101,d102,d112,d201,d202,d212);
+          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp: In constructor ‘FTensor::Tensor3_antisymmetric<T*, Tensor_Dim0, Tensor_Dim12>::Tensor3_antisymmetric(T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*, T*)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp:33:56: error: wrong number of template arguments (1, should be 3)
+       Tensor3_antisymmetric_constructor<T* restrict,4,4>
+                                                        ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric.hpp:7:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:92,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_constructor.hpp:10:9: note: provided for ‘template<class T, int Tensor_Dim0, int Tensor_Dim12> class FTensor::Tensor3_antisymmetric_constructor’
+   class Tensor3_antisymmetric_constructor;
+         ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric.hpp:9:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:92,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp:34:10: error: ‘data’ was not declared in this scope
+         (data,d001,d002,d003,d012,d013,d023,d101,d102,d103,d112,d113,d123,
+          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp: In member function ‘T& FTensor::Tensor3_antisymmetric<T*, Tensor_Dim0, Tensor_Dim12>::unsafe(int, int, int)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp:62:15: error: ‘data’ was not declared in this scope
+       return *data[N1][N3-1+(N2*(2*(Tensor_Dim12-1)-N2-1))/2];
+               ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp: In member function ‘T FTensor::Tensor3_antisymmetric<T*, Tensor_Dim0, Tensor_Dim12>::operator()(int, int, int) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp:80:23: error: ‘data’ was not declared in this scope
+       return N2<N3 ? *data[N1][N3-1+(N2*(2*(Tensor_Dim12-1)-N2-1))/2]
+                       ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp: In member function ‘T* FTensor::Tensor3_antisymmetric<T*, Tensor_Dim0, Tensor_Dim12>::ptr(int, int, int) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp:97:22: error: ‘data’ was not declared in this scope
+       return N2<N3 ? data[N1][N3-1+(N2*(2*(Tensor_Dim12-1)-N2-1))/2]
+                      ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp: In member function ‘const FTensor::Tensor3_antisymmetric<T*, Tensor_Dim0, Tensor_Dim12>& FTensor::Tensor3_antisymmetric<T*, Tensor_Dim0, Tensor_Dim12>::operator++() const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor3_antisymmetric/Tensor3_antisymmetric_pointer.hpp:131:13: error: ‘data’ was not declared in this scope
+           ++data[i][j];
+             ^
+In file included from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor4_ddg.hpp:8:0,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor.hpp:94,
+                 from /home/miguel/CLionProjects/Simbolos_Cristoffel/main.cpp:2:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor4_ddg/Tensor4_ddg_pointer.hpp: At global scope:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor4_ddg/Tensor4_ddg_pointer.hpp:10:17: error: expected ‘;’ at end of member declaration
+     mutable T * restrict data[(Tensor_Dim01*(Tensor_Dim01+1))/2][(Tensor_Dim23*(Tensor_Dim23+1))/2];
+                 ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor4_ddg/Tensor4_ddg_pointer.hpp:10:26: error: ‘data’ does not name a type
+     mutable T * restrict data[(Tensor_Dim01*(Tensor_Dim01+1))/2][(Tensor_Dim23*(Tensor_Dim23+1))/2];
+                          ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor4_ddg/Tensor4_ddg_pointer.hpp: In member function ‘T& FTensor::Tensor4_ddg<T*, Tensor_Dim01, Tensor_Dim23>::operator()(int, int, int, int)’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor4_ddg/Tensor4_ddg_pointer.hpp:31:32: error: ‘data’ was not declared in this scope
+       return N1>N2 ? (N3>N4 ? *data[N1+(N2*(2*Tensor_Dim01-N2-1))/2]
+                                ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor4_ddg/Tensor4_ddg_pointer.hpp: In member function ‘T FTensor::Tensor4_ddg<T*, Tensor_Dim01, Tensor_Dim23>::operator()(int, int, int, int) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor4_ddg/Tensor4_ddg_pointer.hpp:58:32: error: ‘data’ was not declared in this scope
+       return N1>N2 ? (N3>N4 ? *data[N1+(N2*(2*Tensor_Dim01-N2-1))/2]
+                                ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor4_ddg/Tensor4_ddg_pointer.hpp: In member function ‘T* FTensor::Tensor4_ddg<T*, Tensor_Dim01, Tensor_Dim23>::ptr(int, int, int, int) const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor4_ddg/Tensor4_ddg_pointer.hpp:82:31: error: ‘data’ was not declared in this scope
+       return N1>N2 ? (N3>N4 ? data[N1+(N2*(2*Tensor_Dim01-N2-1))/2]
+                               ^
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor4_ddg/Tensor4_ddg_pointer.hpp: In member function ‘const FTensor::Tensor4_ddg<T*, Tensor_Dim01, Tensor_Dim23>& FTensor::Tensor4_ddg<T*, Tensor_Dim01, Tensor_Dim23>::operator++() const’:
+/home/miguel/CLionProjects/Simbolos_Cristoffel/FTensor/Tensor4_ddg/Tensor4_ddg_pointer.hpp:243:13: error: ‘data’ was not declared in this scope
+           ++data[i][j];
+             ^
+CMakeFiles/Simbolos_Cristoffel.dir/build.make:62: fallo en las instrucciones para el objetivo 'CMakeFiles/Simbolos_Cristoffel.dir/main.cpp.o'
+make[3]: *** [CMakeFiles/Simbolos_Cristoffel.dir/main.cpp.o] Error 1
+CMakeFiles/Makefile2:67: fallo en las instrucciones para el objetivo 'CMakeFiles/Simbolos_Cristoffel.dir/all'
+make[2]: *** [CMakeFiles/Simbolos_Cristoffel.dir/all] Error 2
+CMakeFiles/Makefile2:79: fallo en las instrucciones para el objetivo 'CMakeFiles/Simbolos_Cristoffel.dir/rule'
+make[1]: *** [CMakeFiles/Simbolos_Cristoffel.dir/rule] Error 2
+Makefile:118: fallo en las instrucciones para el objetivo 'Simbolos_Cristoffel'
+make: *** [Simbolos_Cristoffel] Error 2
