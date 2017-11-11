@@ -71,8 +71,10 @@ namespace FTensor
        higher dimension than what is really allowed (like Dim=5). */
 
     template<char i, char j, char k, char l, int Dim01, int Dim23>
-    Tensor4_ddg_Expr<Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,
-                     T,Dim01,Dim23,i,j,k,l> operator()
+    typename std::enable_if<(Tensor_Dim01 >= Dim01 && Tensor_Dim23 >= Dim23),
+            Tensor4_ddg_Expr<Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,
+                     T,Dim01,Dim23,i,j,k,l> >::type
+    operator()
     (const Index<i,Dim01> , const Index<j,Dim01> ,
      const Index<k,Dim23> , const Index<l,Dim23> )
     {
@@ -82,8 +84,10 @@ namespace FTensor
 
 
     template<char i, char j, char k, char l, int Dim01, int Dim23>
-    const Tensor4_ddg_Expr<const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,
-                           T,Dim01,Dim23,i,j,k,l> operator()
+    typename std::enable_if<(Tensor_Dim01 >= Dim01 && Tensor_Dim23 >= Dim23),
+        const Tensor4_ddg_Expr<const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,
+                     T,Dim01,Dim23,i,j,k,l> >::type
+    operator()
     (const Index<i,Dim01> , const Index<j,Dim01> ,
      const Index<k,Dim23> , const Index<l,Dim23> ) const
     {
@@ -95,8 +99,9 @@ namespace FTensor
        an index for the other two, yielding a Tensor2_symmetric_Expr. */
 
     template<char i, char j, int N0, int N1, int Dim>
-    const Tensor2_symmetric_Expr<const Tensor4_ddg_number_01
-                                 <const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,T,N0,N1>,T,Dim,i,j>
+    typename std::enable_if<(Tensor_Dim01 > N0 && Tensor_Dim01 > N1 && Tensor_Dim23 >= Dim),
+        const Tensor2_symmetric_Expr<const Tensor4_ddg_number_01<const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,
+                   T,N0,N1>,T,Dim,i,j> >::type
     operator()(const Number<N0> , const Number<N1> ,
                const Index<i,Dim> , const Index<j,Dim> ) const
     {
@@ -106,8 +111,9 @@ namespace FTensor
     }
 
     template<char i, char j, int N0, int N1, int Dim>
-    Tensor2_symmetric_Expr<Tensor4_ddg_number_rhs_01
-                           <Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,T,N0,N1>,T,Dim,i,j>
+    typename std::enable_if<(Tensor_Dim01 > N0 && Tensor_Dim01 > N1 && Tensor_Dim23 >= Dim),
+            Tensor2_symmetric_Expr<Tensor4_ddg_number_rhs_01<Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,
+                    T,N0,N1>,T,Dim,i,j> >::type
     operator()(const Number<N0> , const Number<N1> ,
                const Index<i,Dim> , const Index<j,Dim> )
     {
@@ -120,8 +126,9 @@ namespace FTensor
        an index for the other three, yielding a Tensor3_dg_Expr. */
 
     template<char i, char j, char k, int N0, int Dim1, int Dim23>
-    const Tensor3_dg_Expr<const Tensor4_ddg_number_0
-                          <const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,T,N0>,T,Dim23,Dim1,i,j,k>
+    typename std::enable_if<(Tensor_Dim01 > N0 && Tensor_Dim01 >= Dim1 && Tensor_Dim23 >= Dim23),
+        const Tensor3_dg_Expr<const Tensor4_ddg_number_0<const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,
+                   T,N0>,T,Dim23,Dim1,i,j,k> >::type
     operator()(const Number<N0> , const Index<k,Dim1> ,
                const Index<i,Dim23> , const Index<j,Dim23> ) const
     {
@@ -131,8 +138,9 @@ namespace FTensor
     }
 
     template<char i, char j, char k, int N0, int Dim1, int Dim23>
-    Tensor3_dg_Expr<Tensor4_ddg_number_rhs_0
-                    <Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,T,N0>,T,Dim23,Dim1,i,j,k>
+    typename std::enable_if<(Tensor_Dim01 > N0 && Tensor_Dim01 >= Dim1 && Tensor_Dim23 >= Dim23),
+            Tensor3_dg_Expr<Tensor4_ddg_number_rhs_0<Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,T,N0>,
+                 T,Dim23,Dim1,i,j,k> >::type
     operator()(const Number<N0> , const Index<k,Dim1> ,
                const Index<i,Dim23> , const Index<j,Dim23> )
     {
@@ -146,8 +154,9 @@ namespace FTensor
        Tensor2_symmetric_Expr. */
 
     template<char i, char j, int Dim>
-    const Tensor2_symmetric_Expr<const Tensor4_ddg_numeral_01
-                                 <const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,T>,T,Dim,i,j>
+    typename std::enable_if<(Tensor_Dim23 >= Dim),
+        const Tensor2_symmetric_Expr<const Tensor4_ddg_numeral_01<const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,
+                   T>,T,Dim,i,j> >::type
     operator()(const int N0, const int N1,
                const Index<i,Dim> , const Index<j,Dim> ) const
     {
@@ -158,8 +167,9 @@ namespace FTensor
     }
 
     template<char i, char j, int Dim>
-    const Tensor2_symmetric_Expr<const Tensor4_ddg_numeral_23
-                                 <const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,T>,T,Dim,i,j>
+    typename std::enable_if<(Tensor_Dim01 >= Dim),
+        const Tensor2_symmetric_Expr<const Tensor4_ddg_numeral_23<const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,
+                   T>,T,Dim,i,j> >::type
     operator()(const Index<i,Dim> , const Index<j,Dim> ,
                const int N2, const int N3) const
     {
@@ -172,8 +182,9 @@ namespace FTensor
     /* int in two slots but yielding a Tensor2 */
 
     template<char i, char j, int Dim1, int Dim3>
-    const Tensor2_Expr<const Tensor4_ddg_numeral_02
-                       <const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,T>,T,Dim1,Dim3,i,j>
+    typename std::enable_if<(Tensor_Dim01 >= Dim1 && Tensor_Dim23 >= Dim3),
+        const Tensor2_Expr<const Tensor4_ddg_numeral_02<const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,
+                   T>,T,Dim1,Dim3,i,j> >::type
     operator()(const int N0, const Index<i,Dim1> ,
                const int N2, const Index<j,Dim3> ) const
     {
@@ -186,10 +197,11 @@ namespace FTensor
     /* int in three slots, Index in the other yielding a Tensor1_Expr. */
 
     template<char i, int Dim>
-    const Tensor1_Expr<const Tensor4_ddg_numeral_123<const Tensor4_ddg
-                                                     <T,Tensor_Dim01,Tensor_Dim23>,T>,T,Dim,i>
-    operator()(const Index<i,Dim> , const int N1, const int N2,
-               const int N3)
+    typename std::enable_if<(Tensor_Dim01 >= Dim),
+        const Tensor1_Expr<const Tensor4_ddg_numeral_123<const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,
+                   T>,T,Dim,i> >::type
+    operator()(const Index<i,Dim> , const int N1,
+               const int N2, const int N3)
     {
       typedef const Tensor4_ddg_numeral_123<const Tensor4_ddg
                                             <T,Tensor_Dim01,Tensor_Dim23>,T> TensorExpr;
@@ -197,8 +209,9 @@ namespace FTensor
     }
 
     template<char i, int Dim>
-    const Tensor1_Expr<const Tensor4_ddg_numeral_123<const Tensor4_ddg
-                                                     <T,Tensor_Dim01,Tensor_Dim23>,T>,T,Dim,i>
+    typename std::enable_if<(Tensor_Dim01 >= Dim),
+        const Tensor1_Expr<const Tensor4_ddg_numeral_123<const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,
+                   T>,T,Dim,i> >::type
     operator()(const int N1, const Index<i,Dim> , const int N2,
                const int N3)
     {
@@ -212,8 +225,9 @@ namespace FTensor
        Tensor3_dg_Expr. */
 
     template<char i, char j, char k, int Dim1, int Dim23>
-    const Tensor3_dg_Expr<const Tensor4_ddg_numeral_0
-                          <const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,T>,T,Dim23,Dim1,i,j,k>
+    typename std::enable_if<(Tensor_Dim01 >= Dim1 && Tensor_Dim23 >= Dim23),
+        const Tensor3_dg_Expr<const Tensor4_ddg_numeral_0<const Tensor4_ddg<T,Tensor_Dim01,Tensor_Dim23>,
+                   T>,T,Dim23,Dim1,i,j,k> >::type
     operator()(const int N0, const Index<k,Dim1> ,
                const Index<i,Dim23> , const Index<j,Dim23> ) const
     {

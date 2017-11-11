@@ -17,6 +17,7 @@
 #include "Tensor2_transform.hpp"
 #include "minus_Tensor2.hpp"
 #include "conj_Tensor2.hpp"
+#include "dTensor2.hpp"
 
 namespace FTensor
 {
@@ -54,7 +55,7 @@ namespace FTensor
     template<class B, class U>
     const Tensor2_Expr<Tensor2<A,Dim0,Dim1,layout>,T,Dim0,Dim1,i,j> &
     operator=(const Tensor2_Expr<B,U,Dim0,Dim1,i,j> &result);
-  
+  //TODO allow different A in the rigth side
     const Tensor2_Expr<Tensor2<A,Dim0,Dim1,layout>,T,Dim0,Dim1,i,j> &
     operator=(const Tensor2_Expr<Tensor2<A,Dim0,Dim1,layout>,T,Dim0,Dim1,i,j> &result);
   

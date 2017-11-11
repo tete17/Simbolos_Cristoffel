@@ -81,16 +81,18 @@ namespace FTensor
        antisymmetric anymore since they cover different dimensions. */
 
     template<char i, char j, int Dim0, int Dim1>
-    Tensor2_Expr<Tensor2_antisymmetric<T,Tensor_Dim>,T,Dim0,Dim1,i,j>
-    operator()(const Index<i,Dim0> index1, const Index<j,Dim1> index2)
+    typename std::enable_if<(Tensor_Dim >= Dim0 && Tensor_Dim >= Dim1),
+            Tensor2_Expr<Tensor2_antisymmetric<T,Tensor_Dim>,T,Dim0,Dim1,i,j> >::type
+    operator()(const Index<i,Dim0> , const Index<j,Dim1> )
     {
       return Tensor2_Expr<Tensor2_antisymmetric<T,Tensor_Dim>,T,Dim0,Dim1,i,j>
         (*this);
     }
 
     template<char i, char j, int Dim0, int Dim1>
-    Tensor2_Expr<const Tensor2_antisymmetric<T,Tensor_Dim>,T,Dim0,Dim1,i,j>
-    operator()(const Index<i,Dim0> index1, const Index<j,Dim1> index2) const
+    typename std::enable_if<(Tensor_Dim >= Dim0 && Tensor_Dim >= Dim1),
+            Tensor2_Expr<const Tensor2_antisymmetric<T,Tensor_Dim>,T,Dim0,Dim1,i,j> >::type
+    operator()(const Index<i,Dim0> , const Index<j,Dim1> ) const
     {
       return Tensor2_Expr<const Tensor2_antisymmetric<T,Tensor_Dim>,T,Dim0,Dim1,i,j>
         (*this);
@@ -100,7 +102,8 @@ namespace FTensor
        antisymmetric on the lower dimensions. */
 
     template<char i, char j, int Dim>
-    Tensor2_antisymmetric_Expr<Tensor2_antisymmetric<T,Tensor_Dim>,T,Dim,i,j>
+    typename std::enable_if<(Tensor_Dim >= Dim),
+            Tensor2_antisymmetric_Expr<Tensor2_antisymmetric<T,Tensor_Dim>,T,Dim,i,j> >::type
     operator()(const Index<i,Dim> index1, const Index<j,Dim> index2)
     {
       return Tensor2_antisymmetric_Expr<Tensor2_antisymmetric<T,Tensor_Dim>,T,Dim,i,j>
@@ -108,7 +111,8 @@ namespace FTensor
     }
 
     template<char i, char j, int Dim>
-    Tensor2_antisymmetric_Expr<const Tensor2_antisymmetric<T,Tensor_Dim>,T,Dim,i,j>
+    typename std::enable_if<(Tensor_Dim >= Dim),
+            Tensor2_antisymmetric_Expr<const Tensor2_antisymmetric<T,Tensor_Dim>,T,Dim,i,j> >::type
     operator()(const Index<i,Dim> index1, const Index<j,Dim> index2) const
     {
       return Tensor2_antisymmetric_Expr<const Tensor2_antisymmetric<T,Tensor_Dim>,
@@ -123,9 +127,10 @@ namespace FTensor
        Tensor2_number_[01]. */
 
     template<char i, int N, int Dim>
-    Tensor1_Expr<Tensor2_number_rhs_1<Tensor2_antisymmetric<T,Tensor_Dim>,T,N>,
-                 T,Dim,i>
-    operator()(const Index<i,Dim> index1, const Number<N> &n1)
+    typename std::enable_if<(Tensor_Dim >= Dim && Tensor_Dim > N),
+            Tensor1_Expr<Tensor2_number_rhs_1<Tensor2_antisymmetric<T,Tensor_Dim>,T,N>,
+                 T,Dim,i> >::type
+    operator()(const Index<i,Dim> index1, const Number<N>)
     {
       typedef Tensor2_number_rhs_1<Tensor2_antisymmetric<T,Tensor_Dim>,T,N>
         TensorExpr;
@@ -133,9 +138,10 @@ namespace FTensor
     }
 
     template<char i, int N, int Dim>
-    Tensor1_Expr<const Tensor2_number_1<const Tensor2_antisymmetric<T,Tensor_Dim>,
-                                        T,N>,T,Dim,i>
-    operator()(const Index<i,Dim> index1, const Number<N> &n1) const
+    typename std::enable_if<(Tensor_Dim >= Dim && Tensor_Dim > N),
+            Tensor1_Expr<const Tensor2_number_1<const Tensor2_antisymmetric<T,Tensor_Dim>,
+                                        T,N>,T,Dim,i> >::type
+    operator()(const Index<i,Dim> index1, const Number<N>) const
     {
       typedef const Tensor2_number_1<const Tensor2_antisymmetric<T,Tensor_Dim>,T,N>
         TensorExpr;
@@ -143,9 +149,10 @@ namespace FTensor
     }
 
     template<char i, int N, int Dim>
-    Tensor1_Expr<Tensor2_number_rhs_0<Tensor2_antisymmetric<T,Tensor_Dim>,T,N>,
-                 T,Dim,i>
-    operator()(const Number<N> &n1, const Index<i,Dim> index1)
+    typename std::enable_if<(Tensor_Dim > N && Tensor_Dim >= Dim),
+            Tensor1_Expr<Tensor2_number_rhs_0<Tensor2_antisymmetric<T,Tensor_Dim>,T,N>,
+                 T,Dim,i> >::type
+    operator()(const Number<N>, const Index<i,Dim> index1)
     {
       typedef Tensor2_number_rhs_0<Tensor2_antisymmetric<T,Tensor_Dim>,T,N>
         TensorExpr;
@@ -153,8 +160,9 @@ namespace FTensor
     }
 
     template<char i, int N, int Dim>
-    Tensor1_Expr<const Tensor2_number_0<const Tensor2_antisymmetric<T,Tensor_Dim>,
-                                        T,N>,T,Dim,i>
+    typename std::enable_if<(Tensor_Dim > N && Tensor_Dim >= Dim),
+            Tensor1_Expr<const Tensor2_number_0<const Tensor2_antisymmetric<T,Tensor_Dim>,
+                                        T,N>,T,Dim,i> >::type
     operator()(const Number<N> &n1, const Index<i,Dim> index1) const
     {
       typedef const Tensor2_number_0<const Tensor2_antisymmetric<T,Tensor_Dim>,T,N>
@@ -165,8 +173,9 @@ namespace FTensor
     /* Specializations for using actual numbers instead of Number<> */
 
     template<char i, int Dim>
-    Tensor1_Expr<const Tensor2_numeral_1<const Tensor2_antisymmetric<T,Tensor_Dim>,
-                                         T>,T,Dim,i>
+    typename std::enable_if<(Tensor_Dim >= Dim),
+            Tensor1_Expr<const Tensor2_numeral_1<const Tensor2_antisymmetric<T,Tensor_Dim>,
+                                         T>,T,Dim,i> >::type
     operator()(const Index<i,Dim> index1, const int N) const
     {
       typedef const Tensor2_numeral_1<const Tensor2_antisymmetric<T,Tensor_Dim>,T>
@@ -175,8 +184,9 @@ namespace FTensor
     }
 
     template<char i, int Dim>
-    Tensor1_Expr<const Tensor2_numeral_0<const Tensor2_antisymmetric<T,Tensor_Dim>,
-                                         T>,T,Dim,i>
+    typename std::enable_if<(Tensor_Dim >= Dim),
+            Tensor1_Expr<const Tensor2_numeral_0<const Tensor2_antisymmetric<T,Tensor_Dim>,
+                                         T>,T,Dim,i> >::type
     operator()(const int N, const Index<i,Dim> index1) const
     {
       typedef const Tensor2_numeral_0<const Tensor2_antisymmetric<T,Tensor_Dim>,T>
@@ -188,15 +198,23 @@ namespace FTensor
        contractions, yielding a T.  I have to specify one for both
        const and non-const because otherwise the compiler will use the
        operator() which gives a Tensor2_Expr<>. */
-  
+
+    /* TODO Here is a good question. It wont create a problem if i put
+       a higher dimension Index in here but it would be
+       grammatically wrong. Im gonna add it for now, we can discuss it*/
+
     template<char i, int Dim>
-    T operator()(const Index<i,Dim> index1, const Index<i,Dim> index2)
+    typename std::enable_if<(Tensor_Dim >= Dim),
+            T>::type
+    operator()(const Index<i,Dim> index1, const Index<i,Dim> index2)
     {
       return 0;
     }
 
     template<char i, int Dim>
-    T operator()(const Index<i,Dim> index1, const Index<i,Dim> index2) const
+    typename std::enable_if<(Tensor_Dim >= Dim),
+            T>::type
+    operator()(const Index<i,Dim> index1, const Index<i,Dim> index2) const
     {
       return 0;
     }

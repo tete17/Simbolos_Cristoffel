@@ -364,4 +364,52 @@ namespace FTensor
   {
     return T3_times_T3_021(a,b,Number<Dim0>(),Number<Dim1>(),Number<Dim2>());
   }
+
+  /* A(i,j,k)*B(k,l,m) -> Tensor 4 */
+
+  template<class A,class B,class T,class U,int Dim0,int Dim1,int Dim23,int Dim4,int Dim5,
+          char i,char j,char k,char l,char m>
+  class Tensor3_times_Tensor3_21
+  {
+    const Tensor3_Expr<A,T,Dim0,Dim1,Dim23,i,j,k> iterA;
+    const Tensor3_Expr<B,U,Dim23,Dim4,Dim5,k,l,m> iterB;
+
+    template<int CurrentDim>
+    typename promote<T,U>::V eval(const int N1,const int N2,const int N3,const int N4,
+                                  const Number<CurrentDim> &) const
+    {
+      return iterA(N1,N2,CurrentDim-1)*iterB(CurrentDim-1,N3,N4)
+              + eval(N1,N2,N3,N4,Number<CurrentDim-1>());
+    }
+    typename promote<T,U>::V eval(const int N1,const int N2,const int N3,const int N4,
+                                  const Number<1> &) const
+    {
+      return iterA(N1,N2,0)*iterB(0,N3,N4);
+    }
+  public:
+    Tensor3_times_Tensor3_21(const Tensor3_Expr<A,T,Dim0,Dim1,Dim23,i,j,k> &a,
+                             const Tensor3_Expr<B,U,Dim23,Dim4,Dim5,k,l,m> &b):
+            iterA(a), iterB(b) {}
+    typename promote<T,U>::V operator()(const int &N1,const int &N2,
+                                        const int &N3,const int &N4) const
+    {
+      return eval(N1,N2,N3,N4,Number<Dim23>());
+    }
+  };
+
+  template<class A,class B,class T,class U,int Dim0,int Dim1,int Dim23,int Dim4,int Dim5,
+          char i,char j,char k,char l,char m>
+  inline const Tensor4_Expr
+  <const Tensor3_times_Tensor3_21<A,B,T,U,Dim0,Dim1,Dim23,Dim4,Dim5,i,j,k,l,m>,
+   typename promote<T,U>::V,
+   Dim0,Dim1,Dim4,Dim5,
+   i,j,l,m>
+  operator*(const Tensor3_Expr<A,T,Dim0,Dim1,Dim23,i,j,k> &a,
+            const Tensor3_Expr<B,U,Dim23,Dim4,Dim5,k,l,m> &b)
+  {
+    typedef const Tensor3_times_Tensor3_21<A,B,T,U,Dim0,Dim1,Dim23,Dim4,Dim5,i,j,k,l,m>
+            TensorExpr;
+    return Tensor4_Expr<TensorExpr,typename promote<T,U>::V,Dim0,Dim1,Dim4,Dim5,i,j,l,m>
+            (TensorExpr(a,b));
+  };
 }

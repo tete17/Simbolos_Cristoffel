@@ -62,8 +62,10 @@ namespace FTensor
   template <class A, class T, int Dim0, int Dim12, char i, char j, char k>
   class Tensor3_antisymmetric_Expr;
 
+  template<class T,int Dim0,int Dim1,int Dim2,int Dim3> class Tensor4;
   template <class A, class T, int Dim0, int Dim1, int Dim2, int Dim3,
-    char i, char j, char k, char l> class Tensor4_Expr;
+    char i, char j, char k, char l>
+  class Tensor4_Expr;
 
   template <class T, int Dim> class Tensor4_Riemann;
   template <class A, class T, int Dim, char i, char j, char k, char l>
@@ -77,6 +79,12 @@ namespace FTensor
   template<class A, class T, int N0>
   class Tensor4_ddg_number_rhs_0;
 }
+#if __cplusplus < 201103L
+#include "FTensor/enable_if.hpp"
+#else
+#include <type_traits>
+#endif
+
 #include "FTensor/Index.hpp"
 #include "FTensor/Number.hpp"
 #include "FTensor/promote.hpp"
@@ -90,7 +98,8 @@ namespace FTensor
 #include "FTensor/Tensor3_dg.hpp"
 #include "FTensor/Tensor3_christof.hpp"
 #include "FTensor/Tensor3_antisymmetric.hpp"
-#include "FTensor/Tensor4/Tensor4_Expr.hpp"
+#include "FTensor/Tensor4/Tensor4_contracted.hpp"
+#include "FTensor/Tensor4.hpp"
 #include "FTensor/Tensor4_ddg.hpp"
 #include "FTensor/Tensor4_Riemann.hpp"
 

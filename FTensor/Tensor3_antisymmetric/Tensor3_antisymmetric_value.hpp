@@ -86,8 +86,9 @@ namespace FTensor
        expressions. */
   
     template<char i, char j, char k, int Dim0, int Dim12>
-    Tensor3_antisymmetric_Expr<Tensor3_antisymmetric<T,Tensor_Dim0,Tensor_Dim12>,
-                               T,Dim0,Dim12,i,j,k>
+    typename std::enable_if<(Tensor_Dim0 >= Dim0 && Tensor_Dim12 >= Dim12),
+            Tensor3_antisymmetric_Expr<Tensor3_antisymmetric<T,Tensor_Dim0,Tensor_Dim12>,
+                               T,Dim0,Dim12,i,j,k> >::type
     operator()(const Index<i,Dim0> , const Index<j,Dim12> ,
                const Index<k,Dim12> )
     {
@@ -96,13 +97,15 @@ namespace FTensor
     }
 
     template<char i, char j, char k, int Dim0, int Dim12>
-    Tensor3_antisymmetric_Expr<const Tensor3_antisymmetric
-                               <T,Tensor_Dim0,Tensor_Dim12>,T,Dim0,Dim12,i,j,k>
+    typename std::enable_if<(Tensor_Dim0 >= Dim0 && Tensor_Dim12 >= Dim12),
+            Tensor3_antisymmetric_Expr<const Tensor3_antisymmetric<T,Tensor_Dim0,Tensor_Dim12>,
+                 T,Dim0,Dim12,i,j,k> >::type
     operator()(const Index<i,Dim0> , const Index<j,Dim12> ,
                const Index<k,Dim12> ) const
     {
       return Tensor3_antisymmetric_Expr<const Tensor3_antisymmetric
                                         <T,Tensor_Dim0,Tensor_Dim12>,T,Dim0,Dim12,i,j,k>(*this);
     }
+      //TODO Add the rest of operations with partial index and numbers
   };
 }

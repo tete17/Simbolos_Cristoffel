@@ -93,7 +93,8 @@ namespace FTensor
        higher dimension than what is really allowed (like Dim=5). */
 
     template<char i, char j, int Dim0, int Dim1>
-    Tensor2_Expr<Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,T,Dim0,Dim1,i,j>
+    typename std::enable_if<(Tensor_Dim0 >= Dim0 && Tensor_Dim1 >= Dim1),
+            Tensor2_Expr<Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,T,Dim0,Dim1,i,j> >::type
     operator()(const Index<i,Dim0> , const Index<j,Dim1> )
     {
       return Tensor2_Expr<Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,T,Dim0,Dim1,i,j>
@@ -101,7 +102,8 @@ namespace FTensor
     }
 
     template<char i, char j, int Dim0, int Dim1>
-    Tensor2_Expr<const Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,T,Dim0,Dim1,i,j>
+    typename std::enable_if<(Tensor_Dim0 >= Dim0 && Tensor_Dim1 >= Dim1),
+            Tensor2_Expr<const Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,T,Dim0,Dim1,i,j> >::type
     operator()(const Index<i,Dim0> , const Index<j,Dim1> ) const
     {
       return Tensor2_Expr<const Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,
@@ -116,8 +118,9 @@ namespace FTensor
        Tensor2_number_[01]. */
 
     template<char i, int Dim, int N>
-    Tensor1_Expr<Tensor2_number_rhs_1<Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,
-                                      T,N>,T,Dim,i>
+    typename std::enable_if<(Tensor_Dim0 >= Dim && Tensor_Dim1 > N),
+            Tensor1_Expr<Tensor2_number_rhs_1<Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,
+                                      T,N>,T,Dim,i> >::type
     operator()(const Index<i,Dim> , const Number<N> )
     {
       typedef Tensor2_number_rhs_1<Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,
@@ -126,8 +129,9 @@ namespace FTensor
     }
 
     template<char i, int Dim, int N>
-    Tensor1_Expr<Tensor2_number_rhs_0<Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,
-                                      T,N>,T,Dim,i>
+    typename std::enable_if<(Tensor_Dim0 > N && Tensor_Dim1 >= Dim),
+            Tensor1_Expr<Tensor2_number_rhs_0<Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,
+                                      T,N>,T,Dim,i> >::type
     operator()(const Number<N> , const Index<i,Dim> )
     {
       typedef Tensor2_number_rhs_0<Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,T,N>
@@ -136,8 +140,9 @@ namespace FTensor
     }
 
     template<char i, int Dim, int N>
-    Tensor1_Expr<const Tensor2_number_1<const Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,
-                                        T,N>,T,Dim,i>
+    typename std::enable_if<(Tensor_Dim0 >= Dim && Tensor_Dim1 > N),
+            Tensor1_Expr<const Tensor2_number_1<const Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,
+                                        T,N>,T,Dim,i> >::type
     operator()(const Index<i,Dim> , const Number<N> ) const
     {
       typedef const Tensor2_number_1<const Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,T,N>
@@ -146,8 +151,9 @@ namespace FTensor
     }
 
     template<char i, int Dim, int N>
-    Tensor1_Expr<const Tensor2_number_0<const Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,
-                                        T,N>,T,Dim,i>
+    typename std::enable_if<(Tensor_Dim0 > N && Tensor_Dim1 >= Dim),
+            Tensor1_Expr<const Tensor2_number_0<const Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,
+                                        T,N>,T,Dim,i> >::type
     operator()(const Number<N> , const Index<i,Dim> ) const
     {
       typedef const Tensor2_number_0<const Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,T,N>
@@ -159,9 +165,14 @@ namespace FTensor
        is used for one slot, and an index for another, yielding a
        Tensor1_Expr. */
 
+    /* Unfortunately since this integers can only be checked at run time
+       i can only partially protect this expressions. We should suggest
+       when ever possible to use Number<>. */
+
     template<char i, int Dim>
-    Tensor1_Expr<const Tensor2_numeral_1<const Tensor2
-                                         <T,Tensor_Dim0,Tensor_Dim1>,T>,T,Dim,i>
+    typename std::enable_if<(Tensor_Dim0 >= Dim),
+            Tensor1_Expr<const Tensor2_numeral_1<const Tensor2
+                                         <T,Tensor_Dim0,Tensor_Dim1>,T>,T,Dim,i> >::type
     operator()(const Index<i,Dim>, const int N) const
     {
       typedef const Tensor2_numeral_1<const Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,T>
@@ -170,8 +181,9 @@ namespace FTensor
     }
 
     template<char i, int Dim>
-    Tensor1_Expr<const Tensor2_numeral_0<const Tensor2
-                                         <T,Tensor_Dim0,Tensor_Dim1>,T>,T,Dim,i>
+    typename std::enable_if<(Tensor_Dim1 >= Dim),
+            Tensor1_Expr<const Tensor2_numeral_0<const Tensor2
+                                         <T,Tensor_Dim0,Tensor_Dim1>,T>,T,Dim,i> >::type
     operator()(const int N, const Index<i,Dim> ) const
     {
       typedef const Tensor2_numeral_0<const Tensor2<T,Tensor_Dim0,Tensor_Dim1,layout>,T>
@@ -185,13 +197,16 @@ namespace FTensor
        operator() which gives a Tensor2_Expr<>. */
 
     template<char i, int Dim>
-    T operator()(const Index<i,Dim> , const Index<i,Dim> )
+    typename std::enable_if<(Tensor_Dim0 >= Dim && Tensor_Dim1 >= Dim),
+            T>::type
+    operator()(const Index<i,Dim> , const Index<i,Dim> )
     {
       return internal_contract(Number<Dim>());
     }
 
     template<char i, int Dim>
-    T operator()(const Index<i,Dim> , const Index<i,Dim> ) const
+    typename std::enable_if<(Tensor_Dim0 >= Dim && Tensor_Dim1 >= Dim),
+            T>::type operator()(const Index<i,Dim> , const Index<i,Dim> ) const
     {
       return internal_contract(Number<Dim>());
     }

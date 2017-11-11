@@ -1,7 +1,6 @@
 /* The general version, not for pointers. */
 
 #include <iostream>
-
 #pragma once
 
 namespace FTensor
@@ -70,14 +69,16 @@ namespace FTensor
        higher dimension than what is really allowed (like Dim=5). */
 
     template<char i, int Dim>
-    Tensor1_Expr<Tensor1<T,Tensor_Dim>,T,Dim,i>
+    typename std::enable_if<(Tensor_Dim >= Dim),
+            Tensor1_Expr<Tensor1<T,Tensor_Dim>,T,Dim,i> >::type
     operator()(const Index<i,Dim> &)
     {
       return Tensor1_Expr<Tensor1<T,Tensor_Dim>,T,Dim,i>(*this);
     }
 
     template<char i, int Dim>
-    Tensor1_Expr<const Tensor1<T,Tensor_Dim>,T,Dim,i>
+    typename std::enable_if<(Tensor_Dim >= Dim),
+            Tensor1_Expr<const Tensor1<T,Tensor_Dim>,T,Dim,i> >::type
     operator()(const Index<i,Dim> &) const
     {
       return Tensor1_Expr<const Tensor1<T,Tensor_Dim>,T,Dim,i>(*this);

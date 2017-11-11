@@ -14,6 +14,7 @@
 #include "Tensor3_plus_Tensor3.hpp"
 #include "Tensor3_or_Tensor3.hpp"
 #include "Tensor3_minus_Tensor3_dg.hpp"
+#include "dTensor3.hpp"
 
 namespace FTensor
 {
